@@ -80,4 +80,22 @@ public class GildedRoseTest {
         assertThat(product.getQuality(), equalTo(0));
         assertThat(product.getSellIn(), equalTo(-1));
     }
+
+    @Test
+    public void should_return_product_with_31_quality_and_29_sellin_when_pass_1_day_for_aged_brie_like_product_with_30_quality_and_30_sellin_in_expiration_date() {
+        Product product = new Product("Aged_Brie", Product.AGED_BRIE_TYPE, 30, 30);
+        rose.updateSellinAndQualityAfterPassDay(product, 1);
+
+        assertThat(product.getQuality(), equalTo(31));
+        assertThat(product.getSellIn(), equalTo(29));
+    }
+
+    @Test
+    public void should_return_product_with_50_quality_and_9_sellin_when_pass_21_day_for_aged_brie_like_product_with_30_quality_and_30_sellin_in_expiration_date() {
+        Product product = new Product("Aged_Brie", Product.AGED_BRIE_TYPE, 30, 30);
+        rose.updateSellinAndQualityAfterPassDay(product, 21);
+
+        assertThat(product.getQuality(), equalTo(50));
+        assertThat(product.getSellIn(), equalTo(9));
+    }
 }
