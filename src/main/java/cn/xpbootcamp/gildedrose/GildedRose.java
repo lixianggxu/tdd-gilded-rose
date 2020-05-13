@@ -7,6 +7,9 @@ public class GildedRose {
 
         int currentSellIn = product.getSellIn();
         int currentQuality = product.getQuality();
+        if (product.getType().equals(Product.SULFURAS_TYPE)) {
+            product.setSellIn(currentSellIn - passDay * 1);
+        }
 
         if (product.getType().equals(Product.AGED_BRIE_TYPE)) {
             product.setSellIn(currentSellIn - passDay);
