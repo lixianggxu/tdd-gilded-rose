@@ -5,7 +5,7 @@ public class Product {
     String type;
     int sellIn;
     int quality;
-    static final String NormalPorductType="NormalPorductType";
+    static final String CommonProductType = "NormalPorductType";
     static final String AgedBrieType="AgedBrieType";
     static final String SulfurasType="SulfurasType";
     static final String BackstagePassType="BackstagePassType";
