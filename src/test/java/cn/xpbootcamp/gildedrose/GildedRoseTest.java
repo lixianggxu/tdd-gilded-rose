@@ -98,4 +98,13 @@ public class GildedRoseTest {
         assertThat(product.getQuality(), equalTo(50));
         assertThat(product.getSellIn(), equalTo(9));
     }
+
+    @Test
+    public void should_return_product_with_50_quality_and_negative_15_sellin_when_pass_25_days_for_aged_brie_like_product_with_10_quality_and_10_sellin_out_of_expiration_date() {
+        Product product = new Product("Aged_Brie", Product.AGED_BRIE_TYPE, 10, 10);
+        rose.updateSellinAndQualityAfterPassDay(product, 25);
+
+        assertThat(product.getQuality(), equalTo(50));
+        assertThat(product.getSellIn(), equalTo(-15));
+    }
 }

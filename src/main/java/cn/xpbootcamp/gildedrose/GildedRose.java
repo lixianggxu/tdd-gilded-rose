@@ -9,10 +9,15 @@ public class GildedRose {
         int currentQuality = product.getQuality();
 
         if (product.getType().equals(Product.AGED_BRIE_TYPE)) {
-            if (currentSellIn > 0) {
-                product.setSellIn(currentSellIn - passDay);
-                product.setQuality(Math.min(currentQuality + passDay, 50));
+            product.setSellIn(currentSellIn - passDay);
+
+            int reduceQuality = (-1) * passDay;
+            if (currentSellIn < passDay) {
+                int reducedQualityInExpirationDate = currentSellIn * (-1);
+                int reducedQualityOutOfExpirationDate = (passDay - currentSellIn) * (-2);
+                reduceQuality = reducedQualityInExpirationDate + reducedQualityOutOfExpirationDate;
             }
+            product.setQuality(Math.min(currentQuality - reduceQuality, 50));
         }
 
         if (product.getType().equals(Product.COMMON_PRODUCT_TYPE) && currentSellIn > 0 && currentSellIn >= passDay) {
