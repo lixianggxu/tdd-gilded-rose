@@ -1,28 +1,17 @@
 package cn.xpbootcamp.gildedrose;
 
-public class CommonProduct {
-    int sellIn;
-    int quality;
-
+public class CommonProduct extends Product {
     public CommonProduct(int quality, int sellIn) {
-        this.quality = quality;
-        this.sellIn = sellIn;
+        super(quality, sellIn);
     }
 
+    @Override
     public void passDay() {
         if (sellIn <= 0) {
             quality--;
         }
         quality = Math.max(quality - 1, 0);
         sellIn = sellIn - 1;
-    }
-
-    public int getQuality() {
-        return quality;
-    }
-
-    public int getSellIn() {
-        return sellIn;
     }
 
 }
