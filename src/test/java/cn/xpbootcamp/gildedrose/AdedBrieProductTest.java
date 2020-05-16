@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class AdedBrieProductTest {
+public class AdedBrieProductTest {
 
     @Test
     void should_quality_31_and_sellin_29_when_one_day_pass_given_quality_30_and_sellin_30_of_adebBrie_product_in_expiration_date() {
