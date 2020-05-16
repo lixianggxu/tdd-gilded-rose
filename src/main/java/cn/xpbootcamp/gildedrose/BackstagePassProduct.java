@@ -7,6 +7,9 @@ public class BackstagePassProduct extends Product {
 
     @Override
     public void passDay() {
+        if (sellIn <= 10) {
+            quality++;
+        }
         quality = quality + 1;
         sellIn = sellIn - 1;
     }
