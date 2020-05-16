@@ -16,7 +16,7 @@ public class BackstagePassProduct extends Product {
         if (sellIn <= 0) {
             quality = 0;
         } else {
-            quality = quality + 1;
+            quality = Math.min(quality + 1, 50);
         }
         sellIn = sellIn - 1;
     }

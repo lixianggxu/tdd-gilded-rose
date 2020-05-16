@@ -37,4 +37,28 @@ public class BackstagePassProductTest {
         assertEquals(0, backstagePass.getQuality());
         assertEquals(-1, backstagePass.getSellIn());
     }
+
+    @Test
+    void should_quality_50_and_sellin_19_when_one_day_pass_given_quality_50_and_sellin_20_of_backstagePass_product_in_expiration_date() {
+        BackstagePassProduct backstagePass = new BackstagePassProduct(50, 20);
+        backstagePass.passDay();
+        assertEquals(50, backstagePass.getQuality());
+        assertEquals(19, backstagePass.getSellIn());
+    }
+
+    @Test
+    void should_quality_50_and_sellin_9_when_one_day_pass_given_quality_50_and_sellin_10_of_backstagePass_product_in_expiration_date() {
+        BackstagePassProduct backstagePass = new BackstagePassProduct(50, 10);
+        backstagePass.passDay();
+        assertEquals(50, backstagePass.getQuality());
+        assertEquals(9, backstagePass.getSellIn());
+    }
+
+    @Test
+    void should_quality_50_and_sellin_4_when_one_day_pass_given_quality_50_and_sellin_5_of_backstagePass_product_in_expiration_date() {
+        BackstagePassProduct backstagePass = new BackstagePassProduct(50, 5);
+        backstagePass.passDay();
+        assertEquals(50, backstagePass.getQuality());
+        assertEquals(4, backstagePass.getSellIn());
+    }
 }
