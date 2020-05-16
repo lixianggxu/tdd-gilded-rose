@@ -21,4 +21,12 @@ class AdedBrieProductTest {
         assertEquals(50, adebBrie.getQuality());
         assertEquals(9, adebBrie.getSellIn());
     }
+
+    @Test
+    void should_quality_32_and_sellin_negative_1_when_one_day_pass_given_quality_30_and_sellin_0_of_common_product_in_expiration_date() {
+        AdedBrieProduct adebBrie = new AdedBrieProduct(30, 0);
+        adebBrie.passDay();
+        assertEquals(32, adebBrie.getQuality());
+        assertEquals(-1, adebBrie.getSellIn());
+    }
 }
