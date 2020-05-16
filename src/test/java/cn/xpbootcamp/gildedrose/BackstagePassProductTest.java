@@ -21,4 +21,12 @@ public class BackstagePassProductTest {
         assertEquals(22, backstagePass.getQuality());
         assertEquals(9, backstagePass.getSellIn());
     }
+
+    @Test
+    void should_quality_23_and_sellin_4_when_one_day_pass_given_quality_20_and_sellin_5_of_backstagePass_product_in_expiration_date() {
+        BackstagePassProduct backstagePass = new BackstagePassProduct(20, 5);
+        backstagePass.passDay();
+        assertEquals(23, backstagePass.getQuality());
+        assertEquals(4, backstagePass.getSellIn());
+    }
 }

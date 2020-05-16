@@ -10,6 +10,9 @@ public class BackstagePassProduct extends Product {
         if (sellIn <= 10) {
             quality++;
         }
+        if (sellIn <= 5) {
+            quality++;
+        }
         quality = quality + 1;
         sellIn = sellIn - 1;
     }
