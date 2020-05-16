@@ -10,6 +10,9 @@ class CommonProduct {
     }
 
     public void passDay() {
+        if (sellIn <= 0) {
+            quality--;
+        }
         quality = Math.max(quality - 1, 0);
         sellIn = sellIn - 1;
     }
