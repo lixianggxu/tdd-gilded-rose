@@ -11,7 +11,9 @@ public class Product {
     }
 
     public Product(int quality) {
+
         this.quality = quality;
+        this.sellIn = sellIn;
     }
 
     public void passDay() {
