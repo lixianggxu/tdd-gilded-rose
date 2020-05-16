@@ -28,4 +28,12 @@ public class CommonProductTest {
         assertEquals(8, commonProduct.getQuality());
         assertEquals(-1, commonProduct.getSellIn());
     }
+
+    @Test
+    void should_quality_0_and_sellin_negative_1_when_one_day_pass_given_quality_0_and_sellin_0_of_common_product_out_of_expiration_date() {
+        CommonProduct commonProduct = new CommonProduct(0, 0);
+        commonProduct.passDay();
+        assertEquals(0, commonProduct.getQuality());
+        assertEquals(-1, commonProduct.getSellIn());
+    }
 }
