@@ -1,6 +1,6 @@
 package cn.xpbootcamp.gildedrose;
 
-class CommonProduct {
+public class CommonProduct {
     int sellIn;
     int quality;
 
