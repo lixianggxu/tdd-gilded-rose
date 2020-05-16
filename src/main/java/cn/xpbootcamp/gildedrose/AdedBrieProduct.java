@@ -8,7 +8,8 @@ public class AdedBrieProduct extends Product {
 
     @Override
     public void passDay() {
-        quality = quality + 1;
+
+        quality = Math.min(quality + 1, 50);
         sellIn = sellIn - 1;
     }
 
