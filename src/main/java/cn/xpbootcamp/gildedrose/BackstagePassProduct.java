@@ -7,6 +7,11 @@ public class BackstagePassProduct extends Product {
 
     @Override
     public void passDay() {
+        countQuality();
+        sellIn = sellIn - 1;
+    }
+
+    public void countQuality() {
         if (sellIn <= 10) {
             quality++;
         }
@@ -18,6 +23,5 @@ public class BackstagePassProduct extends Product {
         } else {
             quality = Math.min(quality + 1, 50);
         }
-        sellIn = sellIn - 1;
     }
 }
