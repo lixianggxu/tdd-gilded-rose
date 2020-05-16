@@ -10,7 +10,12 @@ public class Product {
         this.sellIn = sellIn;
     }
 
+    public Product(int quality) {
+        this.quality = quality;
+    }
+
     public void passDay() {
+        this.quality = quality;
     }
 
     public int getQuality() {
